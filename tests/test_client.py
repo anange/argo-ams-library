@@ -137,7 +137,7 @@ class TestClient(unittest.TestCase):
             assert isinstance(obj1, AmsTopic)
             assert isinstance(obj2, AmsTopic)
             if sys.version_info < (3, ):
-                self.assertRaises(StopIteration, resp.next)
+                self.assertRaises(StopIteration, resp.__next__)
             else:
                 self.assertRaises(StopIteration, resp.__next__)
             self.assertEqual(obj1.name, 'topic1')
@@ -310,7 +310,7 @@ class TestClient(unittest.TestCase):
             assert isinstance(obj1, AmsSubscription)
             assert isinstance(obj2, AmsSubscription)
             if sys.version_info < (3, ):
-                self.assertRaises(StopIteration, resp.next)
+                self.assertRaises(StopIteration, resp.__next__)
             else:
                 self.assertRaises(StopIteration, resp.__next__)
             self.assertEqual(obj1.name, 'subscription1')

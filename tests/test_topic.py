@@ -80,7 +80,7 @@ class TestTopic(unittest.TestCase):
             assert isinstance(obj1, AmsSubscription)
             assert isinstance(obj2, AmsSubscription)
             if sys.version_info < (3, ):
-                self.assertRaises(StopIteration, resp.next)
+                self.assertRaises(StopIteration, resp.__next__)
             else:
                 self.assertRaises(StopIteration, resp.__next__)
             self.assertEqual(obj1.name, 'subscription1')
