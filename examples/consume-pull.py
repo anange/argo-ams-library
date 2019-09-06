@@ -34,7 +34,7 @@ def main():
         data = msg.get_data()
         msgid = msg.get_msgid()
         attr = msg.get_attr()
-        print(('msgid={0}, data={1}, attr={2}'.format(msgid, data, attr)))
+        print('msgid={0}, data={1}, attr={2}'.format(msgid, data, attr))
         ackids.append(id)
 
     # pass list of extracted ackIds to AMS Service so that
